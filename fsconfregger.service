@@ -1,0 +1,13 @@
+[Unit]
+Description=FreeSWITCH conference registration tool
+After=freeswitch.service
+
+[Service]
+User=freeswitch
+EnvironmentFile=/etc/default/fsconfregger
+ExecStart=/usr/local/sbin/fsconfregger -eshost ${EVENTSOCKET_HOST} -esport ${EVENTSOCKET_PORT} -espw ${EVENTSOCKET_PASSWORD} -script ${GENERATOR_SCRIPT}
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

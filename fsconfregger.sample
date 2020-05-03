@@ -1,0 +1,7 @@
+# has to match your freeswitch/autoload_configs/event_socket.conf.xml
+EVENTSOCKET_HOST=localhost
+EVENTSOCKET_PORT=8021
+EVENTSOCKET_PASSWORD=ClueCon
+
+# path to script which generates and removes the xml registration snippets
+GENERATOR_SCRIPT=/usr/local/sbin/sofia-generator.sh
