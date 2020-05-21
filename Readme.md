@@ -18,8 +18,6 @@ After all participants left the Room, the registration is cleaned up.
 To have stable conference numbers BBB requires you to set the parameter *voiceBridge* accordincly when the rooms is created.
 At the moment Greenlight does not support this. So you are required to adapt it or find another way.
 
-Alternatively set *defaultNumDigitsForTelVoice* in **bigbluebutton.properties** to a range which fits your SIP routing requirements.
-
 ## Operation
 
 fsconfregger is required to run on the same machine as FreeSWITCH.
