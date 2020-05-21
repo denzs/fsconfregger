@@ -29,13 +29,23 @@ Just adapt the systemd unitfile and the XML Generator script to your needs.
 
 ### Steps
 
+Example steps to build and setup on a BBB node.
+You propably want to build it once and deploy everything with ansible.
+
 ```
-cp fsconfregger sofia-generator.sh /usr/local/sbin/
+# install golang on ubuntu 16.04
+apt install golang-1.10
+
+# get and build fsconfregger
+/usr/lib/go-1.10/bin/go get github.com/denzs/fsconfregger
+
+cd ~/go/src/github.com/denzs/fsconfregger
+cp ~/go/bin/fsconfregger sofia-generator.sh /usr/local/sbin/
 cp fsconfregger.sample /etc/default/fsconfregger
 cp fsconfregger.service /etc/systemd/system/
+systemctl daemon-reload
 systemctl enable fsconfregger
 systemctl start fsconfregger
-journalctl -u fsconfregger
 ```
 
 ### Parameters
